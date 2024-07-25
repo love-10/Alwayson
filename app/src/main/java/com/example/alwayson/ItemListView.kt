@@ -27,5 +27,6 @@ class ItemListView(context: Context, attributeSet: AttributeSet) :
             layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
             adapter = itemAdapter
         }
+
     }
 }
