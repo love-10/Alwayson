@@ -1,11 +1,13 @@
 package com.example.alwayson
 
 import android.content.Context
+import android.os.Vibrator
 import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.alwayson.databinding.ItemListViewBinding
@@ -14,6 +16,7 @@ class ItemListView(context: Context, attributeSet: AttributeSet) :
     FrameLayout(context, attributeSet) {
     private val binding: ItemListViewBinding =
         ItemListViewBinding.inflate(LayoutInflater.from(context))
+    val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
     private val itemAdapter = ItemAdapter().apply {
         animationEnable = true
         val data = mutableListOf<Bean>()
@@ -37,6 +40,10 @@ class ItemListView(context: Context, attributeSet: AttributeSet) :
                 centerView?.let {
                     val position = recyclerView.getChildAdapterPosition(it)
                     // 在这里处理位于屏幕中间的item
+                    if (position != lastPosition) {
+                        lastPosition = position
+                        VibrateUtils.vibrate(context)
+                    }
                     Log.d(
                         "xxxxx",
                         "中间的item位置: ${(itemAdapter.getItem(position) as Bean).name}"
@@ -45,6 +52,8 @@ class ItemListView(context: Context, attributeSet: AttributeSet) :
             }
         })
     }
+
+    var lastPosition = -1
 
     fun findCenterView(recyclerView: RecyclerView): View? {
         val layoutManager = recyclerView.layoutManager as? LinearLayoutManager ?: return null
