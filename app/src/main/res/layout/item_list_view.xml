@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:background="#FF9800"
+        android:background="@drawable/shape"
         android:layout_width="10dp"
         android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"

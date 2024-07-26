@@ -59,4 +59,5 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("io.github.cymchad:BaseRecyclerViewAdapterHelper4:4.1.4")
+    implementation("com.makeramen:roundedimageview:2.3.0")
 }
