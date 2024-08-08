@@ -60,4 +60,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("io.github.cymchad:BaseRecyclerViewAdapterHelper4:4.1.4")
     implementation("com.makeramen:roundedimageview:2.3.0")
+    implementation("com.github.zhaolewei:ZlwAudioRecorder:v1.09")
 }
