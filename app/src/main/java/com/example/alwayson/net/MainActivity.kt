@@ -16,9 +16,8 @@ class MainActivity : FragmentActivity() {
         binding = ActivityNetBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.download.setOnClickListener {
-            Toast.makeText(this, "下载", Toast.LENGTH_SHORT).show()
             bgHandler.post {
-                DownLoad.downloadFile(this, "http://192.168.0.103:8080/1.mp4", "1.mp4")
+                DownLoad.downloadFile(this, "http://192.168.0.103:8080/d.html", "d.html")
             }
         }
     }

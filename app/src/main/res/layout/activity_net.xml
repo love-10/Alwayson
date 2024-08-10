@@ -10,4 +10,10 @@
         android:layout_height="wrap_content"
         android:text="下载文件" />
 
+    <Button
+        android:id="@+id/upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上传文件" />
+
 </LinearLayout>
