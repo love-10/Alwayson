@@ -76,7 +76,6 @@ object DownLoad {
                                 inputStream.close()
 
                                 Log.d("Download", "File downloaded successfully: $file")
-                                uploadFile(file, "filefile")
                             } catch (e: Exception) {
                                 Log.e("Download", "Failed to save file: ${e.message}")
                             }

@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import com.example.alwayson.bgHandler
 import com.example.alwayson.databinding.ActivityNetBinding
+import java.io.File
 
 class MainActivity : FragmentActivity() {
     private lateinit var binding: ActivityNetBinding
@@ -17,7 +18,16 @@ class MainActivity : FragmentActivity() {
         setContentView(binding.root)
         binding.download.setOnClickListener {
             bgHandler.post {
-                DownLoad.downloadFile(this, "http://192.168.0.103:8080/d.html", "d.html")
+                DownLoad.downloadFile(this, "http://192.168.0.103:8080/1.mp4", "1.mp4")
+            }
+        }
+
+        binding.upload.setOnClickListener {
+            bgHandler.post {
+                DownLoad.uploadFile(
+                    File(getExternalFilesDir("Download")!!.absoluteFile, "1.mp4"),
+                    ""
+                )
             }
         }
     }
