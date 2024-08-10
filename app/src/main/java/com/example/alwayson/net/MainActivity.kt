@@ -25,8 +25,8 @@ class MainActivity : FragmentActivity() {
         binding.upload.setOnClickListener {
             bgHandler.post {
                 DownLoad.uploadFile(
-                    File(getExternalFilesDir("Download")!!.absoluteFile, "1.mp4"),
-                    ""
+                    File(getExternalFilesDir("Download")!!.absoluteFile, "d.html"),
+                    "hhhhhhhhh"
                 )
             }
         }
