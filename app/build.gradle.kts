@@ -58,7 +58,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation("io.github.cymchad:BaseRecyclerViewAdapterHelper4:4.1.4")
+    implementation("io.github.cymchad:BaseRecyclerViewAdapterHelper4:4.1.6")
     implementation("com.makeramen:roundedimageview:2.3.0")
-    implementation("com.github.zhaolewei:ZlwAudioRecorder:v1.09")
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.retrofit2:adapter-rxjava2:2.11.0")
 }
