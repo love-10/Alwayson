@@ -1,9 +1,6 @@
 package com.example.alwayson.net
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.HandlerThread
-import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import com.example.alwayson.bgHandler
 import com.example.alwayson.databinding.ActivityNetBinding
@@ -25,8 +22,19 @@ class MainActivity : FragmentActivity() {
         binding.upload.setOnClickListener {
             bgHandler.post {
                 DownLoad.uploadFile(
-                    File(getExternalFilesDir("Download")!!.absoluteFile, "d.html"),
+                    File(getExternalFilesDir("Download")!!.absoluteFile, "1.mp4"),
                     "6"
+                )
+            }
+        }
+
+        binding.uploadMore.setOnClickListener {
+            bgHandler.post {
+                DownLoad.uploadFiles(
+                    listOf(
+                        File(getExternalFilesDir("Download")!!.absoluteFile, "d.html"),
+                        File(getExternalFilesDir("Download")!!.absoluteFile, "1.mp4")
+                    )
                 )
             }
         }

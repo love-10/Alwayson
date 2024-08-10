@@ -20,6 +20,29 @@ import java.io.OutputStream
 
 object DownLoad {
 
+    fun uploadFiles(fileList:List<File>) {
+        val files = fileList.map { file ->
+            val requestBody = file.asRequestBody("multipart/form-data".toMediaTypeOrNull())
+            MultipartBody.Part.createFormData(file.name, file.name, requestBody)
+        }
+
+        val call = RetrofitClient.fileDownloadService.uploadFiles(files)
+
+        call.enqueue(object : Callback<UploadResponse> {
+            override fun onResponse(call: Call<UploadResponse>, response: Response<UploadResponse>) {
+                if (response.isSuccessful) {
+                    Log.d("Upload", "Files uploaded successfully ${response.body()}")
+                } else {
+                    Log.e("Upload", "Server returned an error: ${response.code()}")
+                }
+            }
+
+            override fun onFailure(call: Call<UploadResponse>, t: Throwable) {
+                Log.e("Upload", "Upload failed: ${t.message}")
+            }
+        })
+    }
+
     fun uploadFile(file: File, descriptionText: String) {
         // 创建 RequestBody
         val requestFile = file.asRequestBody("video/mp4".toMediaTypeOrNull())
