@@ -26,7 +26,7 @@ class MainActivity : FragmentActivity() {
             bgHandler.post {
                 DownLoad.uploadFile(
                     File(getExternalFilesDir("Download")!!.absoluteFile, "d.html"),
-                    "hhhhhhhhh"
+                    "6"
                 )
             }
         }
