@@ -1,12 +1,10 @@
 package com.example.alwayson.net
 
-import android.net.Uri
 import android.util.Log
 import androidx.fragment.app.FragmentActivity
 import com.example.alwayson.bgHandler
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.ResponseBody
@@ -18,7 +16,7 @@ import java.io.FileOutputStream
 import java.io.InputStream
 import java.io.OutputStream
 
-object DownLoad {
+object Api {
 
     fun uploadFiles(fileList:List<File>) {
         val files = fileList.map { file ->

@@ -4,6 +4,7 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Multipart
 import retrofit2.http.POST
@@ -27,4 +28,7 @@ interface FileDownloadService {
     @Multipart
     @POST("upload_more.php")
     fun uploadFiles(@Part files: List<MultipartBody.Part>): Call<UploadResponse>
+
+    @POST("create_user.php") // PHP 处理请求的脚本路径
+    fun createUser(@Body user: User): Call<ApiResponse>
 }
