@@ -124,7 +124,7 @@ class MainActivity : AppCompatActivity() {
         try {
             vad = Vad(
                 assetManager = application.assets,
-                config = config!!,
+                config = config,
             )
         }catch (e:Exception){
             Log.d("xxxxx", "initVadModel: $e")
