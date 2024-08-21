@@ -1,4 +1,4 @@
-package com.k2fsa.sherpa.onnx.vad
+package com.example.alwayson.audio
 
 import android.Manifest
 import android.annotation.SuppressLint
