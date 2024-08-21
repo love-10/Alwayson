@@ -79,7 +79,7 @@ class Vad(
         init {
             try {
                 System.loadLibrary("sherpa-onnx-jni")
-            }catch (e:Exception){
+            } catch (e: Exception) {
                 Log.d("xxxxx", "dddddd: $e")
             }
 
@@ -88,22 +88,17 @@ class Vad(
 }
 
 // directory
-fun getVadModelConfig(type: Int): VadModelConfig? {
-    when (type) {
-        0 -> {
-            return VadModelConfig(
-                sileroVadModelConfig = SileroVadModelConfig(
-                    model = "silero_vad.onnx",
-                    threshold = 0.5F,
-                    minSilenceDuration = 0.25F,
-                    minSpeechDuration = 0.25F,
-                    windowSize = 512,
-                ),
-                sampleRate = 16000,
-                numThreads = 1,
-                provider = "cpu",
-            )
-        }
-    }
-    return null;
+fun getVadModelConfig(): VadModelConfig {
+    return VadModelConfig(
+        sileroVadModelConfig = SileroVadModelConfig(
+            model = "silero_vad.onnx",
+            threshold = 0.5F,
+            minSilenceDuration = 0.25F,
+            minSpeechDuration = 0.25F,
+            windowSize = 512,
+        ),
+        sampleRate = 16000,
+        numThreads = 1,
+        provider = "cpu",
+    )
 }

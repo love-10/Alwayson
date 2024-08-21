@@ -120,9 +120,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private  fun initVadModel() {
-        val type = 0
-        Log.i(TAG, "Select VAD model type ${type}")
-        val config = getVadModelConfig(type)
+        val config = getVadModelConfig()
         try {
             vad = Vad(
                 assetManager = application.assets,
