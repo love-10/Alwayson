@@ -3,6 +3,7 @@ package com.k2fsa.sherpa.onnx
 
 import android.content.res.AssetManager
 import android.util.Log
+import com.example.alwayson.audio.AudioConfig
 
 data class SileroVadModelConfig(
     var model: String,
@@ -97,7 +98,7 @@ fun getVadModelConfig(): VadModelConfig {
             minSpeechDuration = 0.25F,
             windowSize = 512,
         ),
-        sampleRate = 16000,
+        sampleRate = AudioConfig.SAMPLE_RATE,
         numThreads = 1,
         provider = "cpu",
     )
